@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { HomeComponent } from './components/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PatientComponent } from './components/patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NavbarComponent,
     SidebarComponent,
     HomeComponent,
+    PatientComponent,
   ],
   imports: [
     CommonModule,
