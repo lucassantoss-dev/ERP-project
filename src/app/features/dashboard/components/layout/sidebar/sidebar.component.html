@@ -2,28 +2,17 @@
     <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" 
     (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-    <!-- <button mat-button class="menu-button" routerLink="/dashboard">
-        <mat-icon>home</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
-      </button>
-    <button mat-button class="menu-button" routerLink="/home">
-        <mat-icon>home</mat-icon>
-        <span  class="full-width" *ngIf="isExpanded || isShowing">Inbox</span>
-    </button>
-    <button mat-button class="menu-button" routerLink="/home">
-        <mat-icon>home</mat-icon>
-        <span  class="full-width" *ngIf="isExpanded || isShowing">Minha Conta</span>
-    </button>
-    <button mat-button class="menu-button" routerLink="/products">
-        <mat-icon>home</mat-icon>
-        <span  class="full-width" *ngIf="isExpanded || isShowing">Produtos</span>
-    </button> -->
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="/dashboard/home">
         <mat-icon>home</mat-icon>
         <span  class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
     </button>
+    <button mat-button class="menu-button" routerLink="/dashboard/patient">
+        <mat-icon>person</mat-icon>
+        <span  class="full-width" *ngIf="isExpanded || isShowing">Paciente</span>
+    </button>
+    
     <mat-divider></mat-divider>
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="/dashboard/patient">
         <mat-icon>home</mat-icon>
         <span  class="full-width" *ngIf="isExpanded || isShowing">Sair</span>
     </button>
