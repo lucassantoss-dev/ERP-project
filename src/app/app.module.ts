@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginFormComponent } from './features/login/components/login-form/login-form.component';
 import { BarChartComponent } from './shared/chart/bar-chart/bar-chart.component';
 import { LineChartComponent } from './shared/chart/line-chart/line-chart.component';
+import { MaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LineChartComponent } from './shared/chart/line-chart/line-chart.compone
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

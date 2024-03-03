@@ -21,6 +21,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PatientComponent } from './components/patient/patient.component';
+import { DataUploadComponent } from './components/data-upload/data-upload.component';
+import { MaterialModule } from 'src/app/material-module';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { PatientComponent } from './components/patient/patient.component';
     SidebarComponent,
     HomeComponent,
     PatientComponent,
+    DataUploadComponent,
   ],
   imports: [
     CommonModule,
@@ -48,7 +51,8 @@ import { PatientComponent } from './components/patient/patient.component';
     ReactiveFormsModule,
     MatTableModule,
     MatCardModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ]
 })
 export class DashboardModule { }

@@ -1,79 +1,3 @@
-mat-sidenav-container {
-    height: calc(205vh - 95vh);
-}
-
-mat-sidenav {
-    border-right: none;
-    background: #4293ff;
-    color: white;
-    border-radius: 2px;
-    text-align: center;
-    padding: 25px;
-}
-
-mat-icon {
-    color: white;
-}
-
-mat-divider {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #eee;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.dashboard-itens {
-    font-weight: 800;
-    font-size: 20px;
-}
-
-.logo {
-    margin-bottom: 2rem;
-}
-
-.navbar {
-    height: 3.2rem;
-    border-bottom: 1.5px solid white;
-}
-
-.example-sidenav {
-    border-right: none;
-    background: #5e5f5f;
-    color: white;
-    border-radius: 2px;
-    padding: 15px;
-}
-
-i {
-    margin-right: 1rem;
-}
-
-.routing {
-    padding: 2rem;
-}
-
-.drawer-button {
-    margin: 1rem auto 0 1rem;
-}
-
-.button-expanded {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.example-container {
-    height: 100%;
-}
-
-.button-menu {
-    display: flex;
-    position: relative;
-    margin-bottom: 20px;
-}
-
 .content {
     height: calc(100vh - 20px);
     border-radius: 10px;
@@ -85,24 +9,6 @@ i {
     overflow: auto;
 }
 
-.menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
-    line-height: 10px;
-    margin-bottom: 10px;
-    font-size: 13px;
-}
-
-.example-sidenav {
-     user-select: none;
-}
-
-.full-width {
-    width: 100%;
-    font-weight: bold;
-    color: white;
-    margin-left: 10px;
-}
+.example-spacer {
+    flex: 1 1 auto;
+  }
