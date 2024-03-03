@@ -15,6 +15,11 @@ export class SidebarComponent {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
+  badgevisible = false;
+  badgevisibility() {
+    this.badgevisible = true;
+  }
+
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;

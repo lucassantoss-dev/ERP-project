@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { PatientComponent } from './components/patient/patient.component';
+import { DataUploadComponent } from './components/data-upload/data-upload.component';
 
 const routes: Routes = [
   	{
@@ -16,6 +17,10 @@ const routes: Routes = [
 			{
 				path: 'patient',
 				component: PatientComponent,
+			},
+			{
+				path: 'user-upload',
+				component: DataUploadComponent,
 			},
 			{
 				path: '**',
