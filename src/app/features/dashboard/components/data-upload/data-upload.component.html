@@ -1,1 +1,12 @@
-<p>data-upload works!</p>
+<div class="data-upload-content">
+    <div class="title">
+        <h3>Faça o Upload do arquivo a ser avaliado</h3>
+    </div>
+    <div class="card-upload">
+        <mat-card>
+            <mat-card-content>
+                <app-upload-button (fileSelected)="onFileSelected($event)"></app-upload-button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
