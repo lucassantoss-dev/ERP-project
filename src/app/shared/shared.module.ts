@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BarChartComponent } from './chart/bar-chart/bar-chart.component';
 import { LineChartComponent } from './chart/line-chart/line-chart.component';
 import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.component';
+import { UploadButtonComponent } from './upload-button/upload-button.component';
 
 
 
@@ -10,7 +11,8 @@ import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.co
   declarations: [
     BarChartComponent,
     LineChartComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    UploadButtonComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.co
   exports: [
     LineChartComponent,
     DoughnutChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    UploadButtonComponent
   ]
 })
 export class SharedModule { }
