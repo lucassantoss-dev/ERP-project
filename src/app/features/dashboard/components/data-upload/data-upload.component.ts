@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-upload.component.scss']
 })
 export class DataUploadComponent {
+  
+  onFileSelected(event: any): void {
+
+  }
 
 }
