@@ -1,0 +1,17 @@
+<div class="sales-content">
+    <div class="sales-title">
+        <h2>Listagem de pedidos</h2>
+    </div>
+    <div class="sales-search">
+        <mat-card-header>
+            <mat-form-field class="search-input" appearance="fill">
+              <mat-icon matPrefix>search</mat-icon>
+              <input matInput (keyup)="Filterchange($event)" type="text" placeholder="Pesquisar">
+            </mat-form-field>
+          </mat-card-header>
+    </div>
+    <div class="sales-container">
+        <app-order-list class="order-list-container"></app-order-list>
+        <app-order-details class="order-details-container"></app-order-details>
+    </div>
+</div>

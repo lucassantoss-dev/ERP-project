@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
-import { PatientComponent } from './components/patient/patient.component';
-import { DataUploadComponent } from './components/data-upload/data-upload.component';
+import { CustomerServiceComponent } from './components/customer-service/customer-service.component';
+import { SalesComponent } from './components/sales/sales.component';
+import { SuppliersViewComponent } from './components/registrations/suppliers/view/suppliers-view.component';
+import { PaymentMethodsViewComponent } from './components/registrations/payment-methods/view/payment-methods-view.component';
+import { CustomersViewComponent } from './components/registrations/customers/view/customers-view.component';
 
 const routes: Routes = [
-  	{
+	{
 		path: '',
     	component: DashboardComponent,
 		children: [
@@ -15,16 +18,28 @@ const routes: Routes = [
 				component: HomeComponent,
 			},
 			{
-				path: 'patient',
-				component: PatientComponent,
+				path: 'customer-service',
+				component: CustomerServiceComponent,
 			},
 			{
-				path: 'user-upload',
-				component: DataUploadComponent,
+				path: 'sales',
+				component: SalesComponent,
+			},
+			{
+				path: 'suppliers',
+				component: SuppliersViewComponent,
+			},
+			{
+				path: 'customers',
+				component: CustomersViewComponent,
+			},
+			{
+				path: 'payment-methods',
+				component: PaymentMethodsViewComponent,
 			},
 			{
 				path: '**',
-				redirectTo: 'patient',
+				redirectTo: 'home',
 				pathMatch: 'full'
 			},
 		]
@@ -33,7 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class DashboardRoutingModule { }

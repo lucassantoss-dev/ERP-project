@@ -1,0 +1,14 @@
+<div class="order-list">
+    <div *ngFor="let order of orders" class="order-card">
+      <mat-card>
+        <mat-card-content>
+            <p>Nome</p>
+            {{order.name}}
+            <br>
+            <p>Pedido</p>
+            <br>
+            {{order.pedido}}
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
