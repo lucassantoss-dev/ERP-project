@@ -1,0 +1,175 @@
+.order-container {
+    height: 808px;
+    margin-top: -137px;
+    background-color: transparent;
+}
+
+.order-list-card-logo {
+    border-bottom: 0 solid transparent;
+    border-right: 1px solid rgb(117, 117, 117);
+    width: 80px;
+    height: 64px;
+}
+
+.order-list-logo-and-name {
+    display: flex;
+}
+
+.order-list-logo {
+    flex: 0 0 auto;
+}
+
+.order-list-name {
+    flex: 1;
+}
+
+.order-list-card-logo {
+    width: 80px;
+}
+
+.order-list-img {
+    width: 100%;
+    height: auto;
+}
+
+.order-list-card-name {
+    width: 700px;
+    height: 63px;
+}
+
+.order-list-card-name mat-card-content {
+    padding: 10px;
+}
+
+.order-list-card-p {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    width: 600px;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(167, 167, 167);
+}
+
+.items-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-type {
+    font-weight: bold;
+    color: rgb(9, 255, 9);
+    margin-left: auto;
+    background-color: #12ff45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.order-details-content {
+    padding: 0;
+}
+
+.service-information p {
+    margin-top: 10px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.service-information p mat-icon {
+    margin-right: 10px;
+}
+
+.print-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-top: 1px solid rgb(211, 209, 209);
+}
+
+.print-card p {
+    margin-top: 10px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.print-card p mat-icon {
+    margin-right: 10px;
+}
+
+
+.print-card mat-icon {
+    color: gray;
+}
+
+.finalize p {
+    margin-top: 10px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.finalize p mat-icon {
+    margin-right: 10px;
+}
+
+.send {
+    font-size: 20px;
+    color:chocolate;
+}
+
+.service-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.button-print {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.print {
+    border-left: 1px solid rgb(211, 209, 209);
+}
+
+.ordered-items {
+    height: 80px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.ordered-items-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-delete {
+    display: flex;
+}
+
+.finalize-item {
+    margin-top: 140px;
+    height: 260px;
+}
+
+.finalize-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.finalize-button button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

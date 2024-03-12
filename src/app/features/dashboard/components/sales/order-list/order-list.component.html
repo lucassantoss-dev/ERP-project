@@ -1,14 +1,59 @@
 <div class="order-list">
-    <div *ngFor="let order of orders" class="order-card">
-      <mat-card>
-        <mat-card-content>
-            <p>Nome</p>
-            {{order.name}}
-            <br>
-            <p>Pedido</p>
-            <br>
-            {{order.pedido}}
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div *ngFor="let order of orders" class="order-card">
+    <mat-card>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="order-list-logo-and-name">
+            <div class="order-list-logo">
+              <mat-card class="order-list-card-logo">
+                <mat-card-content>
+                  <img class="order-list-img" src="../../../../../../assets/ifood.png" alt="Logo Ifood">
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="order-list-name">
+              <mat-card class="order-list-card-name">
+                <mat-card-content>
+                  <p class="order-list-card-p">#Code</p>
+                  <span style="font-weight: bold;">Nome: </span>
+                  {{order.name}}
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="order-list-card-type">
+            <mat-card-content>
+              <div class="card-type">
+                <mat-card class="order-card-type">
+                  <mat-card-content class="order-card-content">Retirada</mat-card-content>
+                </mat-card>
+              </div>
+              <div class="order-time">
+                <span><mat-icon>schedule</mat-icon>12/03 17:04</span>
+              </div>
+              <div class="delivery-time">
+                <span><mat-icon>access_alarm</mat-icon>12/03 18:04</span>
+              </div>
+              <div class="status">
+                <span *ngIf="status" class="status-late">Atrasado</span>
+                <span *ngIf="!status" class="status-preparing">Preparando</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-md-12">
+          <div class="people-informations">
+            <mat-card class="people-informations-card">
+              <mat-card-content>
+                <p><mat-icon>perm_identity</mat-icon>Fulano</p>
+                <p><mat-icon>room</mat-icon>Localização</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-card>
   </div>
+</div>
