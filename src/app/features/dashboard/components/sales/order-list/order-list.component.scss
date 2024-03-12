@@ -1,3 +1,156 @@
 mat-card {
     margin-bottom: 10px
 }
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-list-card-logo {
+    border-bottom: 0 solid transparent;
+    border-right: 1px solid rgb(117, 117, 117);
+    width: 80px;
+    height: 64px;
+}
+
+.people-informations-card {
+    width: 77%;
+    height: 95px;
+    margin-top: -95px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.people-informations-card p {
+    display: flex;
+    align-items: center;
+}
+
+.people-informations-card p mat-icon {
+    margin-right: 8px;
+}
+
+.order-card-type {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.status-preparing {
+    color: rgb(9, 255, 9);
+}
+
+.status-late {
+    color: rgb(255, 16, 16);
+}
+
+.order-list-card-type {
+    margin-bottom: 0;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    height: auto;
+}
+
+.card-type {
+    font-weight: bold;
+    color: rgb(9, 255, 9);
+    margin-left: auto;
+    background-color: #12ff45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.order-card-content {
+    text-align: center;
+}
+
+.order-time,
+.delivery-time,
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.order-list-card-type .status,
+.order-list-card-type .card-type {
+    justify-content: center;
+}
+
+.order-list-card-type .status {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.order-card {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.order-list-card-p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.order-list-logo-and-name {
+    display: flex;
+}
+
+.order-list-logo {
+    flex: 0 0 auto;
+}
+
+.order-list-name {
+    flex: 1;
+}
+
+.order-list-card-logo {
+    width: 80px;
+}
+
+.order-list-img {
+    width: 100%;
+    height: auto;
+}
+
+.order-list-card-name {
+    width: 570px;
+    height: 63px;
+}
+
+.order-list-card-name mat-card-content {
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .order-card {
+        margin-bottom: 20px;
+    }
+
+    .people-informations-card {
+        width: auto;
+    }
+
+    .order-list-logo-and-name {
+        width: 370px;
+    }
+
+    .order-list-name {
+        margin-left: 0;
+    }
+}

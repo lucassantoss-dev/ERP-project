@@ -8,6 +8,7 @@ import { OrderService } from 'src/app/core/order.service';
 })
 export class OrderListComponent implements OnInit {
   orders: any[] = [];
+  status: boolean = true;
 
   constructor(private orderService: OrderService) { }
 

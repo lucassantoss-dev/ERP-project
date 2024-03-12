@@ -1,7 +1,110 @@
 <div *ngIf="selectedOrder" class="order-details">
-    <mat-card>
+    <mat-card class="order-container">
         <mat-card-content>
-            <h3>Pedido 1</h3>
+            <mat-card class="order-details">
+                <mat-card-content class="order-details-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="order-list-logo-and-name">
+                                <div class="order-list-logo">
+                                    <mat-card class="order-list-card-logo">
+                                        <mat-card-content>
+                                            <img class="order-list-img" src="../../../../../../assets/ifood.png"
+                                                alt="Logo Ifood">
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                                <div class="order-list-name">
+                                    <mat-card class="order-list-card-name">
+                                        <mat-card-content>
+                                            <div class="items-details">
+                                                <div class="items-left">
+                                                    <p class="order-list-card-p">Pizza Calabresa</p>
+                                                    <span class="name">João</span>
+                                                </div>
+                                                <div class="card-type">
+                                                    <mat-card class="order-card-type">
+                                                        <mat-card-content
+                                                            class="order-card-content">Retirada</mat-card-content>
+                                                    </mat-card>
+                                                </div>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row service-information">
+                        <div class="col-md-12">
+                            <p><mat-icon>perm_identity</mat-icon>TESTE</p>
+                            <p><mat-icon>room</mat-icon>Rua Dom Delgado, 222, Edson Queiroz, Fortaleza</p>
+                            <p><mat-icon>motorcycle</mat-icon>José</p>
+                        </div>
+                    </div>
+                    <div class="print-card">
+                        <div class="print-card-text">
+                            <p class="service-name">TESTE</p>
+                            <p class="send"><mat-icon>send</mat-icon>Enviando</p>
+                        </div>
+                        <div class="print">
+                            <button class="btn btn-lg button-print"><mat-icon>print</mat-icon></button>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="ordered-items">
+                <mat-card-content>
+                    <div class="ordered-items-content">
+                        <div class="button-delete">
+                            <div class="button-delete-item">
+                                <button class="btn btn-lg"><mat-icon>delete_forever</mat-icon></button>
+                            </div>
+                            <div class="item-description">
+                                <p>Refrigerante</p>
+                                <p>2 Un</p>
+                            </div>
+                        </div>
+                        <div class="item-value">
+                            <p>R$: 6,00</p>
+                            <p>R$: 12,00</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="finalize-item">
+                <mat-card-content>
+                    <div class="finalize-item-content">
+                        <div class="row">
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>perm_identity</mat-icon> Pessoas: 1</p>
+                            </div>
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>room_service</mat-icon> Serviço: R$: 1,10</p>
+                            </div>
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>motorcycle</mat-icon> Taxa de entrega: R$: 5,00</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>money</mat-icon> Subtotal: R$: 12,00</p>
+                            </div>
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>room_service</mat-icon> Desconto: R$: 1,10</p>
+                            </div>
+                            <div class="col-md-4 finalize">
+                                <p><mat-icon>motorcycle</mat-icon> Total: R$: 5,00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="finalize-button">
+                        <button class="btn btn-primary">Concluir</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
         </mat-card-content>
     </mat-card>
 </div>
