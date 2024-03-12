@@ -4,13 +4,11 @@ import { BarChartComponent } from './chart/bar-chart/bar-chart.component';
 import { LineChartComponent } from './chart/line-chart/line-chart.component';
 import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.component';
 
-
-
 @NgModule({
   declarations: [
     BarChartComponent,
     LineChartComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
   ],
   imports: [
     CommonModule
@@ -18,7 +16,7 @@ import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.co
   exports: [
     LineChartComponent,
     DoughnutChartComponent,
-    BarChartComponent
+    BarChartComponent,
   ]
 })
 export class SharedModule { }
