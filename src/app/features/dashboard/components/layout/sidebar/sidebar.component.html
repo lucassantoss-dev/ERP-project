@@ -15,27 +15,32 @@
     <mat-drawer #drawer opened="true" mode="side" position="start">
     <mat-nav-list>
         <mat-list-item>
-            <button routerLink="/dashboard/home" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+            <button routerLink="/dashboard/home" mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
         </mat-list-item>
         <mat-list-item>
-            <button routerLink="/dashboard/user-upload" mat-button><mat-icon>explore</mat-icon>Upload de Dados</button>
+            <button routerLink="/dashboard/customer-service" mat-button><mat-icon>group</mat-icon>Atendimento</button>
         </mat-list-item>
         <mat-list-item>
-            <button routerLink="/dashboard/patient" mat-button><mat-icon>table</mat-icon>Paciente</button>
+            <button routerLink="/dashboard/sales" mat-button><mat-icon>local_grocery_store</mat-icon>Vendas</button>
         </mat-list-item>
         <mat-list-item>
-            <button routerLink="table" mat-button><mat-icon>table</mat-icon> Table</button>
+            <button [matMenuTriggerFor]="lvl1master" mat-button><mat-icon>playlist_add</mat-icon>Cadastros</button>
+            <mat-menu #lvl1master="matMenu">
+                <button routerLink="/dashboard/suppliers" mat-menu-item>Fornecedores</button>
+                <button routerLink="/dashboard/customers" mat-menu-item>Clientes</button>
+                <button routerLink="/dashboard/payment-methods" mat-menu-item>Forma de Pagamento</button>
+            </mat-menu>
         </mat-list-item>
         <mat-list-item>
-            <button mat-button><mat-icon>help</mat-icon> Help</button>
+            <button mat-button><mat-icon>help</mat-icon>Help</button>
         </mat-list-item>
         <mat-list-item>
-            <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
+            <button mat-button><mat-icon>analytics</mat-icon>analytics</button>
         </mat-list-item>
     </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-        <div class="content mat-elevation-z8" tabindex="0">
+        <div class="content" tabindex="0">
             <router-outlet></router-outlet>
         </div>
     </mat-drawer-content>

@@ -20,9 +20,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { HomeComponent } from './components/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { PatientComponent } from './components/patient/patient.component';
-import { DataUploadComponent } from './components/data-upload/data-upload.component';
 import { MaterialModule } from 'src/app/material-module';
+import { SalesComponent } from './components/sales/sales.component';
+import { CustomerServiceComponent } from './components/customer-service/customer-service.component';
+import { SuppliersFormComponent } from './components/registrations/suppliers/form/suppliers-form.component';
+import { SuppliersViewComponent } from './components/registrations/suppliers/view/suppliers-view.component';
+import { CustomersViewComponent } from './components/registrations/customers/view/customers-view.component';
+import { CustomersFormComponent } from './components/registrations/customers/form/customers-form/customers-form.component';
+import { OrderListComponent } from './components/sales/order-list/order-list.component';
+import { OrderDetailsComponent } from './components/sales/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +36,14 @@ import { MaterialModule } from 'src/app/material-module';
     NavbarComponent,
     SidebarComponent,
     HomeComponent,
-    PatientComponent,
-    DataUploadComponent,
+    SalesComponent,
+    CustomerServiceComponent,
+    SuppliersFormComponent,
+    SuppliersViewComponent,
+    CustomersViewComponent,
+    CustomersFormComponent,
+    OrderListComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,

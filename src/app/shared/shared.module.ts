@@ -3,16 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BarChartComponent } from './chart/bar-chart/bar-chart.component';
 import { LineChartComponent } from './chart/line-chart/line-chart.component';
 import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.component';
-import { UploadButtonComponent } from './upload-button/upload-button.component';
-
-
 
 @NgModule({
   declarations: [
     BarChartComponent,
     LineChartComponent,
     DoughnutChartComponent,
-    UploadButtonComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +17,6 @@ import { UploadButtonComponent } from './upload-button/upload-button.component';
     LineChartComponent,
     DoughnutChartComponent,
     BarChartComponent,
-    UploadButtonComponent
   ]
 })
 export class SharedModule { }
