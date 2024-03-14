@@ -7,6 +7,8 @@ import { SalesComponent } from './components/sales/sales.component';
 import { SuppliersViewComponent } from './components/registrations/suppliers/view/suppliers-view.component';
 import { PaymentMethodsViewComponent } from './components/registrations/payment-methods/view/payment-methods-view.component';
 import { CustomersViewComponent } from './components/registrations/customers/view/customers-view.component';
+import { DeliveryComponent } from './components/sales/components/delivery/delivery.component';
+import { TableServiceComponent } from './components/sales/components/table-service/table-service.component';
 
 const routes: Routes = [
 	{
@@ -36,6 +38,14 @@ const routes: Routes = [
 			{
 				path: 'payment-methods',
 				component: PaymentMethodsViewComponent,
+			},
+			{
+				path: 'delivery',
+				component: DeliveryComponent,
+			},
+			{
+				path: 'table-service',
+				component: TableServiceComponent,
 			},
 			{
 				path: '**',

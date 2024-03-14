@@ -1,0 +1,29 @@
+.sales-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.order-list-container {
+    flex: 0.7;
+}
+
+.order-details-container {
+    flex: 0.67;
+    margin-left: 17px;
+}
+
+.search-input {
+    margin-left: -14px;
+    padding: 0;
+    width: 51.3%;
+    max-width: 100%;
+}
+
+.order-list-title {
+    width: 50.3%;
+    margin-bottom: 10px;
+}
+
+mat-card {
+    height: 50px;
+}
