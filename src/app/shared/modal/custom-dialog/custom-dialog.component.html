@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+    <mat-card *ngFor="let card of data.cards">
+        <mat-card-header>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            {{ card.description }}
+        </mat-card-content>
+    </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button *ngFor="let button of data.buttons" (click)="onButtonClick(button.action)">
+        {{ button.label }}
+    </button>
+</mat-dialog-actions>

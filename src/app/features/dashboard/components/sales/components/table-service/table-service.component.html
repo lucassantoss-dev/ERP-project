@@ -4,10 +4,10 @@
     </div>
     <div class="table-service-cards">
         <div class="row">
-            <div class="col-md-1 table-list" *ngFor="let table of tableInterface">
-                <mat-card>
-                    <mat-card-content>
-                        <button mat-button>
+            <div class="col-md-2 table-list" *ngFor="let table of tableInterface">
+                <mat-card [ngStyle]="{ 'background-color': table.status ? 'green' : 'red' }">
+                    <mat-card-content class="table-list-content">
+                        <button class="table-button" (click)="createOrdens(table)" mat-button>
                             {{table.name}}
                         </button>
                     </mat-card-content>
