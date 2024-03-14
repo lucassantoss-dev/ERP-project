@@ -6,3 +6,20 @@ a {
 .table-list {
     margin-top: 20px;
 }
+
+.table-list-content {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.table-service-cards {
+    padding: 10px;
+}
+
+.table-button {
+    font-size: 16px;
+    font-weight: 600;
+}
