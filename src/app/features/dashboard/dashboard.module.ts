@@ -27,8 +27,11 @@ import { SuppliersFormComponent } from './components/registrations/suppliers/for
 import { SuppliersViewComponent } from './components/registrations/suppliers/view/suppliers-view.component';
 import { CustomersViewComponent } from './components/registrations/customers/view/customers-view.component';
 import { CustomersFormComponent } from './components/registrations/customers/form/customers-form/customers-form.component';
-import { OrderListComponent } from './components/sales/order-list/order-list.component';
-import { OrderDetailsComponent } from './components/sales/order-details/order-details.component';
+import { OrderListComponent } from './components/sales/components/delivery/order-list/order-list.component';
+import { OrderDetailsComponent } from './components/sales/components/delivery/order-details/order-details.component';
+import { DeliveryComponent } from './components/sales/components/delivery/delivery.component';
+import { TableServiceComponent } from './components/sales/components/table-service/table-service.component';
+import { TableService } from 'src/app/core/table.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { OrderDetailsComponent } from './components/sales/order-details/order-de
     CustomersViewComponent,
     CustomersFormComponent,
     OrderListComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    DeliveryComponent,
+    TableServiceComponent
   ],
   imports: [
     CommonModule,
@@ -65,6 +70,9 @@ import { OrderDetailsComponent } from './components/sales/order-details/order-de
     MatCardModule,
     SharedModule,
     MaterialModule
+  ],
+  providers: [
+    TableService
   ]
 })
 export class DashboardModule { }

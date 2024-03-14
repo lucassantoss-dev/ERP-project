@@ -1,31 +1,63 @@
-<div class="sales-content">
+<div class="sales-container">
     <div class="sales-title">
-        <h2>Listagem de pedidos</h2>
+        <h2 style="font-weight: bold;">Escolha o que deseja fazer: </h2>
     </div>
-    <div class="sales-search">
-        <mat-card-header>
-            <mat-form-field class="search-input" appearance="fill">
-                <mat-icon matPrefix>search</mat-icon>
-                <input matInput (keyup)="Filterchange($event)" type="text" placeholder="Pesquisar">
-            </mat-form-field>
-        </mat-card-header>
-    </div>
-    <div class="order-list-title">
-        <mat-card>
-            <mat-card-content>
-                <div class="row">
-                    <div class="col-md-1">
-                        <mat-icon>alarm_add</mat-icon>
-                    </div>
-                    <div class="col-md-11">
-                        <h3>Novos pedidos</h3>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="sales-container">
-        <app-order-list class="order-list-container"></app-order-list>
-        <app-order-details class="order-details-container"></app-order-details>
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/dashboard/delivery">
+                <mat-card class="redirection-card">
+                    <mat-card-content>
+                        <div class="delivery-content">
+                            <img class="image-delivery" src="../../../../../assets/delivery.png" alt="Delivery Image">
+                        </div>
+                        <div class="delivery-description">
+                            <span>Delivery</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/dashboard/table-service">
+                <mat-card class="redirection-card">
+                    <mat-card-content>
+                        <div class="delivery-content">
+                            <img class="image-delivery" src="../../../../../assets/mesa.png" alt="Delivery Image">
+                        </div>
+                        <div class="delivery-description">
+                            <span>Mesas</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="">
+                <mat-card class="redirection-card">
+                    <mat-card-content>
+                        <div class="delivery-content">
+                            <img class="image-delivery" src="../../../../../assets/caixa.png" alt="Delivery Image">
+                        </div>
+                        <div class="delivery-description">
+                            <span>Caixa</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="">
+                <mat-card class="redirection-card">
+                    <mat-card-content>
+                        <div class="delivery-content">
+                            <img class="image-delivery" src="../../../../../assets/pagamento.png" alt="Delivery Image">
+                        </div>
+                        <div class="delivery-description">
+                            <span>Pedidos</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </div>
     </div>
 </div>
