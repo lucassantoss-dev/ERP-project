@@ -1,0 +1,74 @@
+<h2 mat-dialog-title>Criar Novo Produto</h2>
+<mat-dialog-content>
+    <form [formGroup]='formulario'>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="name" id="name"
+                        placeholder="Nome do produto" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="description" id="description"
+                        placeholder="Descrição do produto" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="price" id="price"
+                        placeholder="Preço do produto" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="productStock" id="productStock"
+                        placeholder="Quantidade em estoque" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="select-container">
+                        <select class="form-control" formControlName="categoryId" id="categoryId">
+                            <option value="">Selecione uma categoria</option>
+                            <option *ngFor="let supplier of suppliers" [value]="supplier._id">{{ supplier.name }}</option>
+                        </select>
+                        <mat-icon class="arrow-icon">keyboard_arrow_down</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="select-container">
+                        <select class="form-control" formControlName="provider" id="provider">
+                            <option value="">Selecione um fornecedor</option>
+                            <option *ngFor="let supplier of suppliers" [value]="supplier._id">{{ supplier.name }}
+                            </option>
+                        </select>
+                        <mat-icon class="arrow-icon">keyboard_arrow_down</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="image" id="image" placeholder="Imagem" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="attributes" id="attributes"
+                        placeholder="Atributos" />
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancelar</button>
+    <button *ngIf="!typeForm" mat-button color="primary" (click)="onCreateClick()"
+        [disabled]="formulario.invalid">Criar</button>
+    <button *ngIf="typeForm" mat-button color="primary" (click)="onCreateClick()"
+        [disabled]="formulario.invalid">Editar</button>
+</mat-dialog-actions>

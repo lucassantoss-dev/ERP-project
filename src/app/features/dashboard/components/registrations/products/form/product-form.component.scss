@@ -1,0 +1,14 @@
+.row {
+    margin-top: 25px;
+}
+
+.select-container {
+    position: relative;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 12px);
+    pointer-events: none;
+}
