@@ -2,3 +2,19 @@
     width: 127vh;
     max-width: 100%;
   }
+
+.suppliers-view {
+  padding: 12px;
+}
+
+.action-button {
+  display: flex;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}

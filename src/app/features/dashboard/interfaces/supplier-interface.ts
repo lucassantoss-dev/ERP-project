@@ -1,0 +1,15 @@
+export interface SupplierInterface {
+    _id: string,
+    name: string,
+    cnpj: number,
+    corporate_name: string,
+    fantasy_name: string,
+    phone_number: number,
+    postal_code: string,
+    address: string,
+    address_number: number,
+    province: string,
+    city: string,
+    uf: string,
+    active: boolean,
+}

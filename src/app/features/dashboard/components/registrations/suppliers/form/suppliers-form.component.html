@@ -1,1 +1,82 @@
-<p>suppliers-form works!</p>
+<h2 mat-dialog-title>Criar Novo Fornecedor</h2>
+<mat-dialog-content>
+    <form [formGroup]='formulario'>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="name" id="name"
+                        placeholder="Nome da empresa" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control email" formControlName="cnpj" id="cpnj"
+                        placeholder="CNPJ da empresa" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="corporate_name" id="corporate_name"
+                        placeholder="Nome fantasia" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="fantasy_name" id="fantasy_name"
+                        placeholder="Nome fantasia da empresa" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control email" formControlName="phone_number" id="phone_number"
+                        placeholder="Telefone da empresa" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="postal_code" id="postal_code"
+                        placeholder="CEP" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="address" id="address"
+                        placeholder="Endereço" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control email" formControlName="address_number" id="address_number"
+                        placeholder="Número" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="province" id="province"
+                        placeholder="Bairro" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="city" id="city"
+                        placeholder="Cidade" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control email" formControlName="uf" id="uf"
+                        placeholder="Estado" />
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancelar</button>
+    <button *ngIf="!typeForm" mat-button color="primary" (click)="onCreateClick()" [disabled]="formulario.invalid">Criar</button>
+    <button *ngIf="typeForm" mat-button color="primary" (click)="onCreateClick()" [disabled]="formulario.invalid">Editar</button>
+</mat-dialog-actions>
