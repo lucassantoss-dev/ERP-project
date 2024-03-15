@@ -1,3 +1,6 @@
+<div class="spinner">
+  <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+</div>
 <div class="suppliers-content">
   <div class="suppliers-title">
     <h2>Listagem de Fornecedores</h2>
@@ -8,11 +11,12 @@
         <mat-icon matPrefix>search</mat-icon>
         <input matInput (keyup)="Filterchange($event)" type="text" placeholder="Pesquisar">
       </mat-form-field>
-      <button style="margin-left: 20%;" (click)="addSupplier()" mat-raised-button color="primary"><mat-icon>add_to_queue</mat-icon>Fornecedor</button>
+      <button style="margin-left: 20%;" (click)="addSupplier()" mat-raised-button
+        color="primary"><mat-icon>add_to_queue</mat-icon>Fornecedor</button>
     </mat-card-header>
   </div>
-  <div class="suppliers-view">
-    <mat-card>
+  <div class="suppliers-view" >
+    <mat-card *ngIf="!loading">
       <mat-card-content>
         <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -21,26 +25,28 @@
             <td mat-cell *matCellDef="let element">{{element.name}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="email">
-            <th mat-sort-header mat-header-cell *matHeaderCellDef>Email</th>
-            <td mat-cell *matCellDef="let element">{{element.email}}</td>
+          <ng-container matColumnDef="cnpj">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>CNPJ</th>
+            <td mat-cell *matCellDef="let element">{{element.cnpj}}</td>
           </ng-container>
 
           <ng-container matColumnDef="phone">
             <th mat-sort-header mat-header-cell *matHeaderCellDef>Telefone</th>
-            <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+            <td mat-cell *matCellDef="let element">{{element.phone_number}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="status">
-            <th mat-sort-header mat-header-cell *matHeaderCellDef>Status</th>
-            <td mat-cell *matCellDef="let element">{{element.status}}</td>
+          <ng-container matColumnDef="address">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Endereço</th>
+            <td mat-cell *matCellDef="let element">{{element.address}}</td>
           </ng-container>
 
           <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Ação</th>
             <td mat-cell *matCellDef="let element">
-
-              <button mat-raised-button color="warn">Delete</button>
+              <div class="action-button">
+                <button mat-button (click)="editSupplier(element._id, element)"><mat-icon>create</mat-icon></button>
+                <button mat-button (click)="deleteSupplier(element._id)"><mat-icon>delete_sweep</mat-icon></button>
+              </div>
             </td>
           </ng-container>
 

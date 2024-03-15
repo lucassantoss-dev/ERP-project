@@ -32,6 +32,7 @@ import { OrderDetailsComponent } from './components/sales/components/delivery/or
 import { DeliveryComponent } from './components/sales/components/delivery/delivery.component';
 import { TableServiceComponent } from './components/sales/components/table-service/table-service.component';
 import { TableService } from 'src/app/core/table.service';
+import { SupplierService } from 'src/app/core/supplier.service';
 
 @NgModule({
   declarations: [
@@ -69,10 +70,11 @@ import { TableService } from 'src/app/core/table.service';
     MatTableModule,
     MatCardModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [
-    TableService
+    TableService,
+    SupplierService
   ]
 })
 export class DashboardModule { }
