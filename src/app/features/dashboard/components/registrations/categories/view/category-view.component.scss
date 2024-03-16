@@ -1,0 +1,27 @@
+.search-input {
+    width: 127vh;
+    max-width: 100%;
+}
+
+.category-view {
+    padding: 12px;
+}
+
+.action-button {
+    display: flex;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.category-list-image {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
