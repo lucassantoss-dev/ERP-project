@@ -36,6 +36,9 @@ import { SupplierService } from 'src/app/core/supplier.service';
 import { ProductViewComponent } from './components/registrations/products/view/product-view.component';
 import { ProductFormComponent } from './components/registrations/products/form/product-form.component';
 import { ProductsService } from 'src/app/core/products.service';
+import { CategoryViewComponent } from './components/registrations/categories/view/category-view.component';
+import { CategoryFormComponent } from './components/registrations/categories/form/category-form.component';
+import { CategoryService } from 'src/app/core/category.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { ProductsService } from 'src/app/core/products.service';
     DeliveryComponent,
     TableServiceComponent,
     ProductViewComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    CategoryViewComponent,
+    CategoryFormComponent
   ],
   imports: [
     CommonModule,
@@ -80,7 +85,8 @@ import { ProductsService } from 'src/app/core/products.service';
   providers: [
     TableService,
     SupplierService,
-    ProductsService
+    ProductsService,
+    CategoryService
   ]
 })
 export class DashboardModule { }

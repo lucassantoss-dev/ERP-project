@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Criar Nova Categoria</h2>
+<mat-dialog-content>
+    <form [formGroup]='formulario'>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="category_name" id="category_name" placeholder="Nome da Categoria" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="description" id="description"
+                    placeholder="Descrição" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="category_image" id="category_image" placeholder="Imagem" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="category_icon" id="category_icon" placeholder="Ícone" />
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancelar</button>
+    <button *ngIf="!typeForm" mat-button color="primary" (click)="onCreateClick()"
+        [disabled]="formulario.invalid">Criar</button>
+    <button *ngIf="typeForm" mat-button color="primary" (click)="onCreateClick()"
+        [disabled]="formulario.invalid">Editar</button>
+</mat-dialog-actions>
