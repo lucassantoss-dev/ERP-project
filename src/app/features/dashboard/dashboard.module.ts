@@ -36,6 +36,8 @@ import { SupplierService } from 'src/app/core/supplier.service';
 import { ProductViewComponent } from './components/registrations/products/view/product-view.component';
 import { ProductFormComponent } from './components/registrations/products/form/product-form.component';
 import { ProductsService } from 'src/app/core/products.service';
+import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
+import { MenuFormComponent } from './components/registrations/menu/form/menu-form.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { ProductsService } from 'src/app/core/products.service';
     DeliveryComponent,
     TableServiceComponent,
     ProductViewComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    MenuViewComponent,
+    MenuFormComponent
   ],
   imports: [
     CommonModule,
