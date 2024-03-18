@@ -11,6 +11,7 @@ import { DeliveryComponent } from './components/sales/components/delivery/delive
 import { TableServiceComponent } from './components/sales/components/table-service/table-service.component';
 import { ProductViewComponent } from './components/registrations/products/view/product-view.component';
 import { CategoryViewComponent } from './components/registrations/categories/view/category-view.component';
+import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
 
 const routes: Routes = [
 	{
@@ -48,6 +49,10 @@ const routes: Routes = [
 			{
 				path: 'categories',
 				component: CategoryViewComponent,
+			},
+			{
+				path: 'menu',
+				component: MenuViewComponent,
 			},
 			{
 				path: 'delivery',

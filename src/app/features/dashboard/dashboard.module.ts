@@ -39,6 +39,7 @@ import { ProductsService } from 'src/app/core/products.service';
 import { CategoryViewComponent } from './components/registrations/categories/view/category-view.component';
 import { CategoryFormComponent } from './components/registrations/categories/form/category-form.component';
 import { CategoryService } from 'src/app/core/category.service';
+import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { CategoryService } from 'src/app/core/category.service';
     ProductViewComponent,
     ProductFormComponent,
     CategoryViewComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    MenuViewComponent
   ],
   imports: [
     CommonModule,
