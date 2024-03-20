@@ -7,5 +7,6 @@ export interface ProductsInterface {
 	provider: string,
 	active: boolean,
 	image: string,
-	attributes: string
+	attributes: string,
+	selectedItemCount: number
 }

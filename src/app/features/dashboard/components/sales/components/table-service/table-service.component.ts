@@ -31,13 +31,13 @@ export class TableServiceComponent implements OnInit {
 				this.tableInterface = tables.data;
 			},
 			(error) => {
-				console.error('Error loading tables:', error);
+				this.alertService.error('error', error.message);
 			}
 		);
 	}
 
 	createOrdens(data: TableServiceInterface): void {
-		if (data.status) {
+		if (!data.table_status) {
 			this.openReservation(data);
 		} else {
 			this.openOrders();
@@ -52,14 +52,23 @@ export class TableServiceComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result => {
 			if (result) {
-				data.status = false;
-				console.log('data', data);
-				this.alertService.success('Sucesso', 'Mesa ocupada, anote os pedidos!')
-				setTimeout(() => {
-					this.openOrders();
-				}, 2000)
+				data.table_status = true;
+				this.tableService.updateTable(data._id, data).subscribe({
+					next: () => {
+						this.alertService.success('Sucesso', 'Mesa ocupada, anote os pedidos!')
+						setTimeout(() => {
+							this.openOrders();
+						}, 2000)
+					}, error: (error: Error) => {
+						this.alertService.error('error', error.message);
+					}
+				})
 			}
 		});
+	}
+
+	getAllProducts(): void {
+		console.log('entrou aqui?')
 	}
 
 	openOrders(): void {

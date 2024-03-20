@@ -1,5 +1,5 @@
 export interface TableServiceInterface {
-    id: number,
-    name: string,
-    status: boolean
+    _id: string,
+    table_number: number,
+    table_status: boolean
 }
