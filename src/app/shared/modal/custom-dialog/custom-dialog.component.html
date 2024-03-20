@@ -1,16 +1,36 @@
-<h2 mat-dialog-title>{{ data.title }}</h2>
+<h2 mat-dialog-title>Selecionar Produto</h2>
 <mat-dialog-content>
-    <mat-card *ngFor="let card of data.cards">
+  <div *ngFor="let category of categories">
+    <h3>{{ getCategoryName(category.categoryId) }}</h3>
+    <div class="card-container">
+      <mat-card class="category-card" *ngFor="let product of category.products">
         <mat-card-header>
-            <mat-card-title>{{ card.title }}</mat-card-title>
+          <mat-card-title>{{ product.name }}</mat-card-title>
         </mat-card-header>
+        <div class="category-header">
+            <div class="category-image">
+                <img class="product-list-image " mat-card-image [src]="product.image" alt="Product Image">
+            </div>
+            <div class="category-button">
+                <button mat-icon-button (click)="decreaseItemCount(product)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span>{{ product.selectedItemCount }}</span>
+                <button mat-icon-button (click)="increaseItemCount(product)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+        </div>
+        
         <mat-card-content>
-            {{ card.description }}
+          {{ product.description }}
         </mat-card-content>
-    </mat-card>
+      </mat-card>
+    </div>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button *ngFor="let button of data.buttons" (click)="onButtonClick(button.action)">
-        {{ button.label }}
-    </button>
+  <button mat-button (click)="onCreateOrder()">Criar pedido</button>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onClose()">Fechar conta</button>
 </mat-dialog-actions>

@@ -1,14 +1,20 @@
 <div class="table-service-container">
-    <div class="table-service-title">
-        <h2>Mesas</h2>
+    <div class="table-service-header">
+        <div class="table-service-title">
+            <h2>Mesas</h2>
+        </div>
+        <div class="create-table">
+            <button mat-raised-button color="primary"><mat-icon>add_to_queue</mat-icon>Mesa
+            </button>
+        </div>
     </div>
     <div class="table-service-cards">
         <div class="row">
             <div class="col-md-2 table-list" *ngFor="let table of tableInterface">
-                <mat-card [ngStyle]="{ 'background-color': table.status ? 'green' : 'red' }">
+                <mat-card [ngStyle]="{ 'background-color': table.table_status ? 'green' : 'red' }">
                     <mat-card-content class="table-list-content">
                         <button class="table-button" (click)="createOrdens(table)" mat-button>
-                            {{table.name}}
+                            Mesa {{table.table_number}}
                         </button>
                     </mat-card-content>
                 </mat-card>
