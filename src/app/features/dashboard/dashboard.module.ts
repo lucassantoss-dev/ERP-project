@@ -40,6 +40,8 @@ import { CategoryViewComponent } from './components/registrations/categories/vie
 import { CategoryFormComponent } from './components/registrations/categories/form/category-form.component';
 import { CategoryService } from 'src/app/core/category.service';
 import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
+import { SaleService } from 'src/app/core/sale.service';
+import { SaleByTableComponent } from './components/sales/components/table-service/sale-by-table/sale-by-table.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { MenuViewComponent } from './components/registrations/menu/view/menu-vie
     ProductFormComponent,
     CategoryViewComponent,
     CategoryFormComponent,
-    MenuViewComponent
+    MenuViewComponent,
+    SaleByTableComponent
   ],
   imports: [
     CommonModule,
@@ -88,7 +91,8 @@ import { MenuViewComponent } from './components/registrations/menu/view/menu-vie
     TableService,
     SupplierService,
     ProductsService,
-    CategoryService
+    CategoryService,
+    SaleService
   ]
 })
 export class DashboardModule { }

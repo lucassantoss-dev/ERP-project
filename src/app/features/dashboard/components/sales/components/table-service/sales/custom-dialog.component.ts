@@ -1,11 +1,16 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CategoryService } from 'src/app/core/category.service';
 import { ProductsService } from 'src/app/core/products.service';
+import { SaleService } from 'src/app/core/sale.service';
+import { AddItemInterface } from 'src/app/features/dashboard/interfaces/add-item.interface';
 import { CategoryInterface } from 'src/app/features/dashboard/interfaces/category-interface';
 import { CategoryInterfaceApi } from 'src/app/features/dashboard/interfaces/category-interface-api';
 import { ProductsInterface } from 'src/app/features/dashboard/interfaces/products-interface';
 import { ProductsInterfaceApi } from 'src/app/features/dashboard/interfaces/products-interface-api';
+import { TableServiceInterface } from 'src/app/features/dashboard/interfaces/table-service';
+import { SaleByTableComponent } from '../sale-by-table/sale-by-table.component';
+import { AlertService } from 'src/app/core/alert.service';
 
 @Component({
 	selector: 'app-custom-dialog',
@@ -13,19 +18,24 @@ import { ProductsInterfaceApi } from 'src/app/features/dashboard/interfaces/prod
 	styleUrls: ['./custom-dialog.component.scss']
 })
 export class CustomDialogComponent implements OnInit {
+	selectedItems: ProductsInterface[] = [];
 	categories: { categoryId: string; products: ProductsInterface[]; }[] = [];
 	allCategories: CategoryInterface[] = [];
 	constructor(
+		public alertService: AlertService,
+		public dialog: MatDialog,
+		private saleService: SaleService,
 		private categoryService: CategoryService,
 		private productService: ProductsService,
 		public dialogRef: MatDialogRef<CustomDialogComponent>,
-		@Inject(MAT_DIALOG_DATA) public product: ProductsInterfaceApi
+		@Inject(MAT_DIALOG_DATA) public tableId: TableServiceInterface
 	) {
 	}
 
 	ngOnInit(): void {
 		this.getAllProducts();
 		this.loadCategories();
+		console.log('title', this.tableId)
 	}
 
 	loadCategories(): void {
@@ -61,16 +71,50 @@ export class CustomDialogComponent implements OnInit {
 
 	increaseItemCount(product: ProductsInterface): void {
 		product.selectedItemCount++;
-	  }
-	
-	  decreaseItemCount(product: ProductsInterface): void {
+		if (!this.selectedItems.includes(product)) {
+			this.selectedItems.push(product);
+		}
+	}
+
+	decreaseItemCount(product: ProductsInterface): void {
 		if (product.selectedItemCount > 0) {
 			product.selectedItemCount--;
 		}
-	  }
+	}
 
 	onCreateOrder(): void {
-		this.dialogRef.close('Criar pedido');
+		const selectedItemsWithCount = this.selectedItems.filter(item => item.selectedItemCount > 0);
+		const itemIds = selectedItemsWithCount.flatMap(item => {
+			return Array.from({ length: item.selectedItemCount }, () => item._id);
+		});
+		const query: AddItemInterface = {
+			tableId: this.tableId.tableId,
+			itensSale: itemIds
+		}
+		this.saleService.addItemInTable(query).subscribe({
+			next: () => {
+				this.alertService.success('Success', 'Pedido criado!')
+				this.dialogRef.close('Cancelar');
+			}
+		})
+	}
+
+	onSaleAccount(): void {
+		this.saleService.getAccountByTable(this.tableId.tableId).subscribe({
+			next: (result) => {
+				const dialogRef = this.dialog.open(SaleByTableComponent, {
+					width: '300px',
+					height: '700px',
+					data: { title: 'Conta parcial', tableId: this.tableId }
+				});
+		
+				dialogRef.afterClosed().subscribe(result => {
+					if (result) {
+					}
+				});
+				this.dialogRef.close('Cancelar');
+			}
+		})
 	}
 
 	onCancel(): void {

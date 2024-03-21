@@ -50,7 +50,7 @@ export class ProductViewComponent implements OnInit {
 	editProduct(id: string, data: ProductsInterface): void {
 		const dialogRef = this.dialog.open(ProductFormComponent, {
 			width: '1200px',
-			height: '400px',
+			height: '300px',
 			data: { id: id, product: data },
 		});
 
@@ -84,7 +84,7 @@ export class ProductViewComponent implements OnInit {
 	createProduct(): void {
 		const dialogRef = this.dialog.open(ProductFormComponent, {
 			width: '1200px',
-			height: '400px'
+			height: '300px'
 		});
 
 		dialogRef.afterClosed().subscribe(result => {

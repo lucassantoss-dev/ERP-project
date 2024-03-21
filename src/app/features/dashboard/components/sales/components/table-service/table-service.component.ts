@@ -5,7 +5,7 @@ import { TableService } from 'src/app/core/table.service';
 import { TableServiceInterface } from 'src/app/features/dashboard/interfaces/table-service';
 import { TableServiceApiInterface } from 'src/app/features/dashboard/interfaces/table-service-api';
 import { ConfirmationDialogComponent } from 'src/app/shared/modal/confirmation-dialog/confirmation-dialog.component';
-import { CustomDialogComponent } from 'src/app/shared/modal/custom-dialog/custom-dialog.component';
+import { CustomDialogComponent } from 'src/app/features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
 
 @Component({
 	selector: 'app-table-service',
@@ -40,7 +40,7 @@ export class TableServiceComponent implements OnInit {
 		if (!data.table_status) {
 			this.openReservation(data);
 		} else {
-			this.openOrders();
+			this.openOrders(data);
 		}
 	}
 
@@ -57,7 +57,7 @@ export class TableServiceComponent implements OnInit {
 					next: () => {
 						this.alertService.success('Sucesso', 'Mesa ocupada, anote os pedidos!')
 						setTimeout(() => {
-							this.openOrders();
+							this.openOrders(data);
 						}, 2000)
 					}, error: (error: Error) => {
 						this.alertService.error('error', error.message);
@@ -68,21 +68,13 @@ export class TableServiceComponent implements OnInit {
 	}
 
 	getAllProducts(): void {
-		console.log('entrou aqui?')
 	}
 
-	openOrders(): void {
+	openOrders(data: TableServiceInterface): void {
 		const dialogRef = this.dialog.open(CustomDialogComponent, {
 			width: '1200px',
 			data: {
-				title: 'Criar pedidos',
-				cards: [
-					{ title: 'Cardápio', description: 'Descrição de cardápio' },
-				],
-				buttons: [
-					{ label: 'Criar pedido', action: 'action1' },
-					{ label: 'Cancelar', action: 'action2' }
-				]
+				tableId: data._id
 			}
 		});
 
