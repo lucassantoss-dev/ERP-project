@@ -6,7 +6,8 @@ import { DoughnutChartComponent } from './chart/doughnut-chart/doughnut-chart.co
 import { ConfirmationDialogComponent } from './modal/confirmation-dialog/confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MaterialModule } from '../material-module';
-import { CustomDialogComponent } from './modal/custom-dialog/custom-dialog.component';
+import { CustomDialogComponent } from '../features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
+import { SaleService } from '../core/sale.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { CustomDialogComponent } from './modal/custom-dialog/custom-dialog.compo
     BarChartComponent,
     ConfirmationDialogComponent,
     CustomDialogComponent
+  ],
+  providers: [
+    SaleService
   ]
 })
 export class SharedModule { }

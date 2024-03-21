@@ -5,7 +5,7 @@ import { TableService } from 'src/app/core/table.service';
 import { TableServiceInterface } from 'src/app/features/dashboard/interfaces/table-service';
 import { TableServiceApiInterface } from 'src/app/features/dashboard/interfaces/table-service-api';
 import { ConfirmationDialogComponent } from 'src/app/shared/modal/confirmation-dialog/confirmation-dialog.component';
-import { CustomDialogComponent } from 'src/app/shared/modal/custom-dialog/custom-dialog.component';
+import { CustomDialogComponent } from 'src/app/features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
 
 @Component({
 	selector: 'app-table-service',
@@ -68,7 +68,6 @@ export class TableServiceComponent implements OnInit {
 	}
 
 	getAllProducts(): void {
-		console.log('entrou aqui?')
 	}
 
 	openOrders(data: TableServiceInterface): void {
