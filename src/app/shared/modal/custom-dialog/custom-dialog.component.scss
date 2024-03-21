@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     overflow-y: auto;
-    max-height: 400px;
 }
 
 mat-card {
@@ -26,4 +25,10 @@ mat-card {
 .category-header {
     display: flex;
     justify-content: space-between;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
 }

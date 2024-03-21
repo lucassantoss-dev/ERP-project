@@ -2,8 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AlertService } from 'src/app/core/alert.service';
+import { CategoryService } from 'src/app/core/category.service';
 import { ProductsService } from 'src/app/core/products.service';
 import { SupplierService } from 'src/app/core/supplier.service';
+import { CategoryInterface } from 'src/app/features/dashboard/interfaces/category-interface';
+import { CategoryInterfaceApi } from 'src/app/features/dashboard/interfaces/category-interface-api';
 import { ProductsInterface } from 'src/app/features/dashboard/interfaces/products-interface';
 import { SupplierInterface } from 'src/app/features/dashboard/interfaces/supplier-interface';
 import { SupplierApiInterface } from 'src/app/features/dashboard/interfaces/supplier-interface-api';
@@ -15,12 +18,14 @@ import { SupplierApiInterface } from 'src/app/features/dashboard/interfaces/supp
 })
 export class ProductFormComponent implements OnInit {
 	public suppliers: SupplierInterface[] = [];
+	public categories: CategoryInterface[] = [];
 	public formulario!: FormGroup;
 	public typeForm: boolean = false;
 	constructor(
 		public dialogRef: MatDialogRef<ProductFormComponent>,
 		private formBuilder: FormBuilder,
 		private productsService: ProductsService,
+		private categoryService: CategoryService,
 		private alertService: AlertService,
 		private supplierService: SupplierService,
 		@Inject(MAT_DIALOG_DATA) public data: { id?: string, product?: ProductsInterface }
@@ -31,6 +36,7 @@ export class ProductFormComponent implements OnInit {
 	ngOnInit(): void {
 		this.criarFormulario();
 		this.getSupplier();
+		this.getAllCategories();
 
 		if (this.data && this.data.product) {
 			this.typeForm = true;
@@ -46,6 +52,14 @@ export class ProductFormComponent implements OnInit {
 			setTimeout(() => {
 				this.suppliers = supplier.data
 			}, 1000)
+		})
+	}
+
+	getAllCategories(): void {
+		this.categoryService.getAllCategories().subscribe({
+			next: (category: CategoryInterfaceApi) => {
+				this.categories = category.data;
+			}
 		})
 	}
 
@@ -66,9 +80,7 @@ export class ProductFormComponent implements OnInit {
 
 	getProductById(id: string): void {
 		this.productsService.getProductById(id).subscribe({
-			next: () => {
-
-			}, error: (err: Error) => {
+			error: (err: Error) => {
 				this.alertService.error('error', err.message);
 			}
 		})
@@ -76,8 +88,9 @@ export class ProductFormComponent implements OnInit {
 
 	createProduct(): void {
 		this.productsService.createProduct(this.formulario.value).subscribe({
-			next: (product: ProductsInterface) => {
-
+			next: () => {
+				this.alertService.success('Success', 'Produto criado com sucesso!');
+				this.dialogRef.close();
 			}, error: (error: Error) => {
 				this.alertService.error('error', error.message);
 			}
@@ -87,7 +100,8 @@ export class ProductFormComponent implements OnInit {
 	editProduct(id: string): void {
 		this.productsService.updateProduct(id, this.formulario.value).subscribe({
 			next: () => {
-
+				this.alertService.success('Success', 'Produto editado com sucesso!');
+				this.dialogRef.close();
 			}, error: (error: Error) => {
 				this.alertService.error('error', error.message);
 			}

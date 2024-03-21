@@ -13,19 +13,21 @@ import { ProductsInterfaceApi } from 'src/app/features/dashboard/interfaces/prod
 	styleUrls: ['./custom-dialog.component.scss']
 })
 export class CustomDialogComponent implements OnInit {
+	selectedItems: ProductsInterface[] = [];
 	categories: { categoryId: string; products: ProductsInterface[]; }[] = [];
 	allCategories: CategoryInterface[] = [];
 	constructor(
 		private categoryService: CategoryService,
 		private productService: ProductsService,
 		public dialogRef: MatDialogRef<CustomDialogComponent>,
-		@Inject(MAT_DIALOG_DATA) public product: ProductsInterfaceApi
+		@Inject(MAT_DIALOG_DATA) public tableId: string
 	) {
 	}
 
 	ngOnInit(): void {
 		this.getAllProducts();
 		this.loadCategories();
+		console.log('title', this.tableId)
 	}
 
 	loadCategories(): void {
@@ -61,16 +63,26 @@ export class CustomDialogComponent implements OnInit {
 
 	increaseItemCount(product: ProductsInterface): void {
 		product.selectedItemCount++;
-	  }
-	
-	  decreaseItemCount(product: ProductsInterface): void {
+		if (!this.selectedItems.includes(product)) {
+			this.selectedItems.push(product);
+		}
+	}
+
+	decreaseItemCount(product: ProductsInterface): void {
 		if (product.selectedItemCount > 0) {
 			product.selectedItemCount--;
 		}
-	  }
+	}
 
 	onCreateOrder(): void {
-		this.dialogRef.close('Criar pedido');
+		const selectedItemsWithCount  = this.selectedItems.filter(item => item.selectedItemCount > 0);
+		const itemIds = selectedItemsWithCount.flatMap(item => {
+			return Array.from({ length: item.selectedItemCount }, () => item._id);
+		});
+		const query = {
+			tableId: this.tableId,
+			itensSale: itemIds
+		}
 	}
 
 	onCancel(): void {

@@ -33,7 +33,7 @@
                     <div class="select-container">
                         <select class="form-control" formControlName="categoryId" id="categoryId">
                             <option value="">Selecione uma categoria</option>
-                            <option *ngFor="let supplier of suppliers" [value]="supplier._id">{{ supplier.name }}</option>
+                            <option *ngFor="let category of categories" [value]="category._id">{{ category.category_name }}</option>
                         </select>
                         <mat-icon class="arrow-icon">keyboard_arrow_down</mat-icon>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="select-container">
                         <select class="form-control" formControlName="provider" id="provider">
                             <option value="">Selecione um fornecedor</option>
-                            <option *ngFor="let supplier of suppliers" [value]="supplier._id">{{ supplier.name }}
+                            <option *ngFor="let supplier of suppliers" [value]="supplier.name">{{ supplier.name }}
                             </option>
                         </select>
                         <mat-icon class="arrow-icon">keyboard_arrow_down</mat-icon>

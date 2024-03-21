@@ -40,7 +40,7 @@ export class TableServiceComponent implements OnInit {
 		if (!data.table_status) {
 			this.openReservation(data);
 		} else {
-			this.openOrders();
+			this.openOrders(data);
 		}
 	}
 
@@ -57,7 +57,7 @@ export class TableServiceComponent implements OnInit {
 					next: () => {
 						this.alertService.success('Sucesso', 'Mesa ocupada, anote os pedidos!')
 						setTimeout(() => {
-							this.openOrders();
+							this.openOrders(data);
 						}, 2000)
 					}, error: (error: Error) => {
 						this.alertService.error('error', error.message);
@@ -71,18 +71,11 @@ export class TableServiceComponent implements OnInit {
 		console.log('entrou aqui?')
 	}
 
-	openOrders(): void {
+	openOrders(data: TableServiceInterface): void {
 		const dialogRef = this.dialog.open(CustomDialogComponent, {
 			width: '1200px',
 			data: {
-				title: 'Criar pedidos',
-				cards: [
-					{ title: 'Cardápio', description: 'Descrição de cardápio' },
-				],
-				buttons: [
-					{ label: 'Criar pedido', action: 'action1' },
-					{ label: 'Cancelar', action: 'action2' }
-				]
+				tableId: data._id
 			}
 		});
 
