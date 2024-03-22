@@ -4,36 +4,48 @@
     <h3>{{ getCategoryName(category.categoryId) }}</h3>
     <div class="card-container">
       <mat-card class="category-card" *ngFor="let product of category.products">
-        <mat-card-header>
-          <mat-card-title>{{ product.name }}</mat-card-title>
-        </mat-card-header>
-        <div class="category-header">
-            <div class="category-image">
-                <img class="product-list-image " mat-card-image [src]="product.image" alt="Product Image">
-            </div>
-            <div class="category-button">
-                <button mat-icon-button (click)="decreaseItemCount(product)">
-                  <mat-icon>remove</mat-icon>
-                </button>
-                <span>{{ product.selectedItemCount }}</span>
-                <button mat-icon-button (click)="increaseItemCount(product)">
-                  <mat-icon>add</mat-icon>
-                </button>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card-header>
+              <mat-card-title class="card-title">{{ product.name }}</mat-card-title>
+              <mat-card-subtitle>
+                <p class="card-description">
+                  {{ product.description }}
+                </p>
+                <p class="card-price">
+                  R$: {{ product.price }}
+                </p>
+              </mat-card-subtitle>
+            </mat-card-header>
+          </div>
+          <div class="col-md-6">
+            <mat-card-content class="card-content">
+              <div class="category-header">
+                <div class="category-image">
+                  <img class="product-list-image " mat-card-image [src]="product.image" alt="Product Image">
+                </div>
+                <div class="category-button">
+                  <button mat-icon-button class="decrease-button" (click)="decreaseItemCount(product)">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                  </button>
+                  <span>{{ product.selectedItemCount }}</span>
+                  <button mat-icon-button class="increase-button" (click)="increaseItemCount(product)">
+                    <mat-icon>add_circle_outline</mat-icon>
+                  </button>
+                </div>
               </div>
+            </mat-card-content>
+          </div>
         </div>
-        
-        <mat-card-content>
-          {{ product.description }}
-        </mat-card-content>
       </mat-card>
     </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions class="actions">
   <div class="action-buttons">
-      <button class="btn btn-primary button" (click)="onCreateOrder()">Criar pedido</button>
-      <button class="btn btn-warning button" (click)="onClose()">Fechar conta</button>
-      <button class="btn btn-primary button" (click)="onSaleAccount()">Conta parcial</button>
-      <button class="btn btn-secondary button" (click)="onCancel()">Cancelar</button>
+    <button class="btn btn-primary button" (click)="onCreateOrder()">Criar pedido</button>
+    <button class="btn btn-warning button" (click)="onClose()">Fechar conta</button>
+    <button class="btn btn-primary button" (click)="onSaleAccount()">Conta parcial</button>
+    <button class="btn btn-secondary button" (click)="onCancel()">Cancelar</button>
   </div>
 </mat-dialog-actions>
