@@ -6,6 +6,7 @@ import { TableServiceInterface } from 'src/app/features/dashboard/interfaces/tab
 import { TableServiceApiInterface } from 'src/app/features/dashboard/interfaces/table-service-api';
 import { ConfirmationDialogComponent } from 'src/app/shared/modal/confirmation-dialog/confirmation-dialog.component';
 import { CustomDialogComponent } from 'src/app/features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-table-service',
@@ -18,7 +19,8 @@ export class TableServiceComponent implements OnInit {
 	constructor(
 		private tableService: TableService,
 		public dialog: MatDialog,
-		private alertService: AlertService
+		private alertService: AlertService,
+		private router: Router
 	) { }
 
 	ngOnInit(): void {
@@ -68,6 +70,10 @@ export class TableServiceComponent implements OnInit {
 	}
 
 	getAllProducts(): void {
+	}
+
+	createReservation(): void {
+		this.router.navigate(['dashboard/reservation'])
 	}
 
 	openOrders(data: TableServiceInterface): void {
