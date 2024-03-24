@@ -107,6 +107,7 @@ export class CustomDialogComponent implements OnInit {
 					height: '700px',
 					data: { title: 'Conta parcial', tableId: this.tableId }
 				});
+				console.log('reslt', result);
 		
 				dialogRef.afterClosed().subscribe(result => {
 					if (result) {

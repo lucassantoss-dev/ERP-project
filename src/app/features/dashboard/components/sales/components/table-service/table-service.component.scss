@@ -20,11 +20,26 @@ a {
 }
 
 .table-button {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+    color: white;
 }
 
 .table-service-header {
     display: flex;
     justify-content: space-between;
+}
+
+.reservation-date {
+    margin-top: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    margin-left: 20px;
 }

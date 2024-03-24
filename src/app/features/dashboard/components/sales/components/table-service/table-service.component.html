@@ -11,13 +11,33 @@
     <div class="table-service-cards">
         <div class="row">
             <div class="col-md-2 table-list" *ngFor="let table of tableInterface">
-                <mat-card [ngStyle]="{ 'background-color': table.table_status ? 'green' : 'red' }">
-                    <mat-card-content class="table-list-content">
-                        <button class="table-button" (click)="createOrdens(table)" mat-button>
-                            Mesa {{table.table_number}}
-                        </button>
-                    </mat-card-content>
-                </mat-card>
+                <a (click)="createOrdens(table)">
+                    <mat-card [ngStyle]="{ 'background-color': table.table_status ? '#79B669' : '#6236F5' }">
+                        <mat-card-content class="table-list-content">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="table-button">
+                                        {{table.table_number}}
+                                    </p>
+                                </div>
+                                <div class="col-md-8 reservation">
+                                    <p class="reservation-date">
+                                        <span class="icon-container">
+                                            <mat-icon>date_range</mat-icon>
+                                        </span>
+                                        <span>Reservar</span>
+                                    </p>
+                                    <p  class="reservation-date">
+                                        <span class="icon-container">
+                                            <mat-icon>person_pin</mat-icon>
+                                        </span>
+                                        <span>1</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </a>
             </div>
         </div>
     </div>
