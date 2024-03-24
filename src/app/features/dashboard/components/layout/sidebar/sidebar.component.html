@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
+<mat-toolbar class="mat-elevation-z8 toolbar">
     <button (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
@@ -12,7 +12,7 @@
     </button>
 </mat-toolbar>
 <mat-drawer-container autosize>
-    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="drawer">
     <mat-nav-list>
         <mat-list-item>
             <button routerLink="/dashboard/home" mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
