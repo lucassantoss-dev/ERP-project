@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
+<mat-toolbar class="mat-elevation-z8 toolbar">
     <button (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
@@ -12,18 +12,21 @@
     </button>
 </mat-toolbar>
 <mat-drawer-container autosize>
-    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="drawer">
     <mat-nav-list>
-        <mat-list-item>
-            <button routerLink="/dashboard/home" mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+        <mat-list-item class="item-button">
+            <button class="redirect-button" routerLink="/dashboard/home" mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item class="item-button">
             <button routerLink="/dashboard/customer-service" mat-button><mat-icon>group</mat-icon>Atendimento</button>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item class="item-button">
+            <button routerLink="/dashboard/reservation" mat-button><mat-icon>date_range</mat-icon>Reservas</button>
+        </mat-list-item>
+        <mat-list-item class="item-button">
             <button routerLink="/dashboard/sales" mat-button><mat-icon>local_grocery_store</mat-icon>Vendas</button>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item class="item-button">
             <button [matMenuTriggerFor]="lvl1master" mat-button><mat-icon>playlist_add</mat-icon>Cadastros</button>
             <mat-menu #lvl1master="matMenu">
                 <button routerLink="/dashboard/suppliers" mat-menu-item>Fornecedores</button>
@@ -34,10 +37,10 @@
                 <button routerLink="/dashboard/menu" mat-menu-item>Cardápio</button>
             </mat-menu>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item class="item-button">
             <button mat-button><mat-icon>help</mat-icon>Help</button>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item class="item-button">
             <button mat-button><mat-icon>analytics</mat-icon>analytics</button>
         </mat-list-item>
     </mat-nav-list>

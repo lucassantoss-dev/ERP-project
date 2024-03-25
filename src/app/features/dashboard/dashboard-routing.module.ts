@@ -12,6 +12,7 @@ import { TableServiceComponent } from './components/sales/components/table-servi
 import { ProductViewComponent } from './components/registrations/products/view/product-view.component';
 import { CategoryViewComponent } from './components/registrations/categories/view/category-view.component';
 import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
+import { ReservationComponent } from './components/sales/components/table-service/reservation/reservation.component';
 
 const routes: Routes = [
 	{
@@ -61,6 +62,10 @@ const routes: Routes = [
 			{
 				path: 'table-service',
 				component: TableServiceComponent,
+			},
+			{
+				path: 'reservation',
+				component: ReservationComponent,
 			},
 			{
 				path: '**',

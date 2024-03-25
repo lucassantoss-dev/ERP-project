@@ -42,6 +42,10 @@ import { CategoryService } from 'src/app/core/category.service';
 import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
 import { SaleService } from 'src/app/core/sale.service';
 import { SaleByTableComponent } from './components/sales/components/table-service/sale-by-table/sale-by-table.component';
+import { ReservationComponent } from './components/sales/components/table-service/reservation/reservation.component';
+import { RecurrenceEditorModule, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { TableFormComponent } from './components/sales/components/table-service/table-form/table-form.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +68,9 @@ import { SaleByTableComponent } from './components/sales/components/table-servic
     CategoryViewComponent,
     CategoryFormComponent,
     MenuViewComponent,
-    SaleByTableComponent
+    SaleByTableComponent,
+    ReservationComponent,
+    TableFormComponent
   ],
   imports: [
     CommonModule,
@@ -86,6 +92,8 @@ import { SaleByTableComponent } from './components/sales/components/table-servic
     MatCardModule,
     SharedModule,
     MaterialModule,
+    ScheduleModule, RecurrenceEditorModule,
+    FullCalendarModule
   ],
   providers: [
     TableService,
