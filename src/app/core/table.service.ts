@@ -19,6 +19,11 @@ export class TableService {
     // return of(tableMock);
   }
 
+  createTable(data: TableServiceInterface): Observable<TableServiceInterface> {
+    const url = `${this.urlApi}/table/create`;
+    return this.http.post<TableServiceInterface>(url, data)
+  }
+
   updateTable(id: string, data: TableServiceInterface): Observable<TableServiceInterface> {
     const url = `${this.urlApi}/table/${id}`;
     return this.http.put<TableServiceInterface>(url, data)

@@ -7,6 +7,7 @@ import { TableServiceApiInterface } from 'src/app/features/dashboard/interfaces/
 import { ConfirmationDialogComponent } from 'src/app/shared/modal/confirmation-dialog/confirmation-dialog.component';
 import { CustomDialogComponent } from 'src/app/features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
 import { Router } from '@angular/router';
+import { TableFormComponent } from './table-form/table-form.component';
 
 @Component({
 	selector: 'app-table-service',
@@ -86,6 +87,17 @@ export class TableServiceComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result => {
 			console.log('Dialog closed with result:', result);
+		});
+	}
+
+	createTable(): void {
+		const dialogRef = this.dialog.open(TableFormComponent, {
+			width: '300px',
+			height: '200px'
+		});
+
+		dialogRef.afterClosed().subscribe(result => {
+			this.loadTables();
 		});
 	}
 }

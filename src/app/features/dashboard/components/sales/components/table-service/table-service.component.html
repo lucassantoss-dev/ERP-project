@@ -4,7 +4,7 @@
             <h2>Listagem de Mesas</h2>
         </div>
         <div class="create-table">
-            <button mat-raised-button class="button-add"><mat-icon>add_to_queue</mat-icon>Mesa
+            <button mat-raised-button class="button-add" (click)="createTable()"><mat-icon>add_to_queue</mat-icon>Mesa
             </button>
             <button mat-raised-button class="button-reservation" (click)="createReservation()"><mat-icon>date_range</mat-icon>Reservar
             </button>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-2 table-list" *ngFor="let table of tableInterface">
                 <a (click)="createOrdens(table)">
-                    <mat-card [ngStyle]="{ 'background-color': table.table_status ? '#6236F5' : '#79B669' }">
+                    <mat-card [ngStyle]="{ 'background-color': table.table_status ? '#3B93C8' : '#79B669' }">
                         <mat-card-content class="table-list-content">
                             <div class="row">
                                 <div class="col-md-4">
