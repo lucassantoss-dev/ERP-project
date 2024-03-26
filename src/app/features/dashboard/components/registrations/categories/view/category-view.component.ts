@@ -39,9 +39,13 @@ export class CategoryViewComponent implements OnInit {
 	}
 
 	getAllCategories(): void {
+		this.loading = true;
 		this.categoryService.getAllCategories().subscribe({
 			next: (category: CategoryInterfaceApi) => {
-				this.dataSource = new MatTableDataSource<CategoryInterface>(category.data);
+				setTimeout(() => {
+					this.dataSource = new MatTableDataSource<CategoryInterface>(category.data);
+					this.loading = false;
+				}, 1000)
 			}
 		})
 	}

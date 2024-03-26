@@ -39,10 +39,13 @@ export class ProductViewComponent implements OnInit {
 	}
 
 	getAllProducts(): void {
+		this.loading = true;
 		this.productService.getAllProducts().subscribe({
 			next: (product: ProductsInterfaceApi) => {
-				this.dataSource = new MatTableDataSource<ProductsInterface>(product.data);
-				console.log('this.dataSource ', this.dataSource );
+				setTimeout(() => {
+					this.dataSource = new MatTableDataSource<ProductsInterface>(product.data);
+					this.loading = false;
+				}, 1000)
 			}
 		})
 	}

@@ -5,9 +5,9 @@ import { TableService } from 'src/app/core/table.service';
 import { TableServiceInterface } from 'src/app/features/dashboard/interfaces/table-service';
 import { TableServiceApiInterface } from 'src/app/features/dashboard/interfaces/table-service-api';
 import { ConfirmationDialogComponent } from 'src/app/shared/modal/confirmation-dialog/confirmation-dialog.component';
-import { CustomDialogComponent } from 'src/app/features/dashboard/components/sales/components/table-service/sales/custom-dialog.component';
 import { Router } from '@angular/router';
 import { TableFormComponent } from './table-form/table-form.component';
+import { CustomDialogComponent } from './sales/custom-dialog.component';
 
 @Component({
 	selector: 'app-table-service',
@@ -16,6 +16,7 @@ import { TableFormComponent } from './table-form/table-form.component';
 })
 export class TableServiceComponent implements OnInit {
 	public tableInterface: TableServiceInterface[] = [];
+	public loading: boolean = false;
 
 	constructor(
 		private tableService: TableService,
@@ -29,9 +30,13 @@ export class TableServiceComponent implements OnInit {
 	}
 
 	loadTables() {
+		this.loading = true;
 		this.tableService.getTables().subscribe(
 			(tables: TableServiceApiInterface) => {
-				this.tableInterface = tables.data;
+				setTimeout(() => {
+					this.loading = false;
+					this.tableInterface = tables.data;
+				}, 1000)
 			},
 			(error) => {
 				this.alertService.error('error', error.message);
