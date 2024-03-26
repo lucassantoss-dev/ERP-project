@@ -4,19 +4,22 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-customers-view',
-  templateUrl: './customers-view.component.html',
-  styleUrls: ['./customers-view.component.scss']
+	selector: 'app-customers-view',
+	templateUrl: './customers-view.component.html',
+	styleUrls: ['./customers-view.component.scss']
 })
 export class CustomersViewComponent implements OnInit {
-  loading: boolean = false;
+	loading: boolean = false;
 	dataSource!: MatTableDataSource<any>;
 	displayedColumns: string[] = ["photo", "name", "description", "price", "stock", "action"];
 	@ViewChild(MatPaginator) paginatior !: MatPaginator;
 	@ViewChild(MatSort) sort !: MatSort;
-	
+
 	ngOnInit(): void {
-		
+		this.loading = true;
+		setTimeout(() => {
+			this.loading = false;
+		}, 1000)
 	}
 
 	Filterchange(data: Event): void {

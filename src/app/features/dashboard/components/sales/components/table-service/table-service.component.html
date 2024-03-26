@@ -1,3 +1,5 @@
+<div class="spinner" *ngIf="loading">
+</div>
 <div class="table-service-container">
     <div class="table-service-header">
         <div class="table-service-title">
@@ -12,7 +14,7 @@
             </button>
         </div>
     </div>
-    <div class="table-service-cards">
+    <div class="table-service-cards" *ngIf="!loading">
         <div class="row">
             <div class="col-md-2 table-list" *ngFor="let table of tableInterface">
                 <a (click)="createOrdens(table)">
