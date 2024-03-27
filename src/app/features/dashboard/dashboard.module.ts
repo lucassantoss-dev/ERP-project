@@ -46,6 +46,8 @@ import { ReservationComponent } from './components/sales/components/table-servic
 import { RecurrenceEditorModule, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { TableFormComponent } from './components/sales/components/table-service/table-form/table-form.component';
+import { CounterServiceComponent } from './components/sales/components/counter-service/counter-service.component';
+import { OpenServiceComponent } from './components/sales/components/counter-service/open-service/open-service.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { TableFormComponent } from './components/sales/components/table-service/
     MenuViewComponent,
     SaleByTableComponent,
     ReservationComponent,
-    TableFormComponent
+    TableFormComponent,
+    CounterServiceComponent,
+    OpenServiceComponent
   ],
   imports: [
     CommonModule,
