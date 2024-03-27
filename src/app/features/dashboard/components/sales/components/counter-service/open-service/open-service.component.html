@@ -1,72 +1,42 @@
-<h2 mat-dialog-title>Detalhes de venda</h2>
+<h2 mat-dialog-title>Selecione uma loja para abrir caixa</h2>
 <mat-dialog-content>
-    <mat-card>
-        <mat-card-content>
-            <div class="content-title">
-                <h3>Dados do pedido</h3>
+    <div class="order-client-form">
+        <form [formGroup]='formulario'>
+            <div class="form-group">
+                <div class="select-container">
+                    <select class="form-control" formControlName="order_id" id="order_id">
+                        <option value="">Selecione a loja</option>
+                    </select>
+                    <mat-icon class="arrow-icon">keyboard_arrow_down</mat-icon>
+                </div>
             </div>
-            <div class="order-client-form">
-                <form [formGroup]='formulario'>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="order_id" id="order_id" placeholder="ID do pedido" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="date" class="form-control" formControlName="date" id="date"
-                                placeholder="Data do pedido" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="client_name" id="client_name" placeholder="Nome do Cliente" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="operation" id="operation" placeholder="Operação" />
-                            </div>
-                        </div>
-                    </div>
-                </form>
+            <div class="form-group">
+                <div class="select-container">
+                    <select class="form-control" formControlName="order_id" id="order_id">
+                        <option value="">Selecione a unidade</option>
+                    </select>
+                    <mat-icon class="arrow-icon-unit">keyboard_arrow_down</mat-icon>
+                </div>
             </div>
-        </mat-card-content>
-    </mat-card>
-
-    <mat-card style="margin-top: 20px;">
-        <mat-card-content>
-            <div class="content-title">
-                <h3>Dados da compra</h3>
+            <div class="form-group">
+                <input type="number" class="form-control" formControlName="client_name" id="client_name"
+                    placeholder="Troco" />
             </div>
-            <div class="order-data-form">
-                <form [formGroup]='formulario'>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="code" id="code" placeholder="Código do produto" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="name" id="name"
-                                placeholder="Nome do produto" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="price" id="price" placeholder="Preço" />
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" formControlName="category" id="category" placeholder="Categoria" />
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </mat-card-content>
-    </mat-card>
+        </form>
+        <mat-card class="warning-card">
+            <mat-card-content>
+                <div class="card-title">
+                    <mat-icon>warning</mat-icon>
+                    <h3>AVISO</h3>
+                </div>
+                <div class="content">
+                    <span>O caixa ainda não foi aberto, clique em OK para abrir.</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </mat-dialog-content>
+<mat-dialog-actions class="action-buttons">
+    <button mat-button (click)="onCancelClick()">Cancelar</button>
+    <button mat-button color="primary" (click)="onCreateClick()">OK</button>
+</mat-dialog-actions>

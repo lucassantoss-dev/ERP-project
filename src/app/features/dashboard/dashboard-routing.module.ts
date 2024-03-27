@@ -14,6 +14,7 @@ import { CategoryViewComponent } from './components/registrations/categories/vie
 import { MenuViewComponent } from './components/registrations/menu/view/menu-view.component';
 import { ReservationComponent } from './components/sales/components/table-service/reservation/reservation.component';
 import { CounterServiceComponent } from './components/sales/components/counter-service/counter-service.component';
+import { CashierComponent } from './components/sales/components/counter-service/cashier/cashier.component';
 
 const routes: Routes = [
 	{
@@ -71,6 +72,10 @@ const routes: Routes = [
 			{
 				path: 'counter-service',
 				component: CounterServiceComponent,
+			},
+			{
+				path: 'cashier',
+				component: CashierComponent,
 			},
 			{
 				path: '**',

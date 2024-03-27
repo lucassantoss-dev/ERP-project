@@ -18,7 +18,7 @@ export class CounterServiceComponent implements OnInit {
   openService(): void {
     const dialogRef = this.dialog.open(OpenServiceComponent, {
       width: '1200px',
-      height: ' 700px'
+      height: '480px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
