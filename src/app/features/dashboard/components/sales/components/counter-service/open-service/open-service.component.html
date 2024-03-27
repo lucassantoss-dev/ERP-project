@@ -1,0 +1,72 @@
+<h2 mat-dialog-title>Detalhes de venda</h2>
+<mat-dialog-content>
+    <mat-card>
+        <mat-card-content>
+            <div class="content-title">
+                <h3>Dados do pedido</h3>
+            </div>
+            <div class="order-client-form">
+                <form [formGroup]='formulario'>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="order_id" id="order_id" placeholder="ID do pedido" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="date" class="form-control" formControlName="date" id="date"
+                                placeholder="Data do pedido" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="client_name" id="client_name" placeholder="Nome do Cliente" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="operation" id="operation" placeholder="Operação" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card style="margin-top: 20px;">
+        <mat-card-content>
+            <div class="content-title">
+                <h3>Dados da compra</h3>
+            </div>
+            <div class="order-data-form">
+                <form [formGroup]='formulario'>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="code" id="code" placeholder="Código do produto" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="name" id="name"
+                                placeholder="Nome do produto" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="price" id="price" placeholder="Preço" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="category" id="category" placeholder="Categoria" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</mat-dialog-content>
