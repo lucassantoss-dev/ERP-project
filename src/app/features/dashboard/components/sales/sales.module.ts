@@ -7,6 +7,7 @@ import { ReservationComponent } from './components/table-service/reservation/res
 import { TableFormComponent } from './components/table-service/table-form/table-form.component';
 import { CounterServiceComponent } from './components/counter-service/counter-service.component';
 import { OpenServiceComponent } from './components/counter-service/open-service/open-service.component';
+import { CashierComponent } from './components/counter-service/cashier/cashier.component';
 
 
 @NgModule({

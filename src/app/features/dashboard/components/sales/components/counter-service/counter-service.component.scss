@@ -4,13 +4,99 @@ a {
     cursor: pointer;
 }
 
-.card-content {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
+.card-content-sales {
+    font-family: 'Roboto';
+
+    .sales-quantity {
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    .sales-img img {
+        width: 90px;
+        height: 90px;
+        border-radius: 40%;
+    }
+    
+    .sales-description {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .value {
+        font-weight: bold;
+    }
+
+    .money {
+        display: flex;
+        justify-content: space-between;
+        max-width: 260px;
+        margin-left: 40px;
+        margin-top: 13px;
+    }
+
+    .money span {
+        font-size: 16px;
+    }
 }
+
+.card-content-sold {
+    font-family: 'Roboto';
+
+    .sold-img img {
+        width: 90px;
+        height: 90px;
+        border-radius: 30%;
+    }
+
+    .additions img {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    .money {
+        display: flex;
+        justify-content: space-between;
+        max-width: 260px;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+
+    .value {
+        font-weight: bold;
+    }
+
+    .additions span {
+        font-weight: bold;
+    }
+
+    .sold-amount {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .sold-amount mat-icon {
+        margin-right: 8px;
+    }
+    
+    .value-description {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+.button-add {
+    background-color: #3B93C8;
+    color: aliceblue;
+    font-size: 16px;
+}
+
 
 .counter-service-title h3 {
     margin-left: 5px;
@@ -20,4 +106,26 @@ a {
 
 .counter-service-content {
     margin-top: 20px;
+}
+
+.create-sale {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-title span {
+    padding: 10px;
+    margin-left:  10px;
+}
+
+.table-content {
+    margin-top: 20px;
+}
+
+.table-header span {
+    padding: 3px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
 }
