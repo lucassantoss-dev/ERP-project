@@ -9,3 +9,69 @@
     align-items: center;
     justify-content: center;
 }
+
+.card-content-sales {
+    background-color: #3B93C8;
+    color: aliceblue;
+    font-family: 'Roboto';
+
+    .sales-quantity {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .sales-quantity mat-icon {
+        margin-right: 8px;
+    }
+
+    .sales-description {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+.card-content-sold {
+    background-color: #79B669;
+    color: aliceblue;
+    font-family: 'Roboto';
+
+    .sold-amount {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .sold-amount mat-icon {
+        margin-right: 8px;
+    }
+
+    .value-description {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+.card-content-products {
+    background-color: #FE8C00;
+    color: aliceblue;
+    font-family: 'Roboto';
+
+    .sold-amount {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .sold-amount mat-icon {
+        margin-right: 8px;
+    }
+
+    .value-description {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
